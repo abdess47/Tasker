@@ -1,0 +1,338 @@
+<TaskerData sr="" dvi="1" tv="5.9.3">
+	<Profile sr="prof540" ve="2">
+		<cdate>1596721832451</cdate>
+		<clp>true</clp>
+		<edate>1590252958838</edate>
+		<flags>8</flags>
+		<id>540</id>
+		<limit>true</limit>
+		<mid0>537</mid0>
+		<nme>Files Phone Call</nme>
+		<pri>12</pri>
+		<Event sr="con0" ve="2">
+			<code>222</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">Record/PhoneRecord/</Str>
+			<Str sr="arg1" ve="3">ClosedWrite</Str>
+		</Event>
+	</Profile>
+	<Profile sr="prof541" ve="2">
+		<cdate>1596721832454</cdate>
+		<clp>true</clp>
+		<edate>1590255276272</edate>
+		<flags>8</flags>
+		<id>541</id>
+		<limit>true</limit>
+		<mid0>538</mid0>
+		<nme>Manage File Phone Call</nme>
+		<Event sr="con0" ve="2">
+			<code>4</code>
+		</Event>
+		<State sr="con1" ve="2">
+			<code>165</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%RepoFileCall</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</State>
+	</Profile>
+	<Profile sr="prof542" ve="2">
+		<cdate>1596721832458</cdate>
+		<clp>true</clp>
+		<edate>1590255705615</edate>
+		<flags>8</flags>
+		<id>542</id>
+		<limit>true</limit>
+		<mid0>539</mid0>
+		<nme>Record Phone Call</nme>
+		<Event sr="con0" ve="2">
+			<code>2</code>
+			<pri>1</pri>
+		</Event>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1590255664024</cdate>
+		<name>Phone Call Manager</name>
+		<pids>542,540,541</pids>
+		<tids>537,538,539</tids>
+		<Share sr="Share">
+			<d>file call manager
+
+
+This project is based on this profile.
+Please see this link before import my profile
+
+https://www.reddit.com/r/tasker/comments/ghjz3i/project_oneplus_call_record_all_devices/?utm_medium=android_app&amp;utm_source=share
+
+After a call you manage the file from call recorder.
+
+This project can :
+-Delete the file
+-Save the file to Google drive
+-Keep file on phone
+
+Important : 
+edit the 11nd task profile "Repository Phone Call2" with your Google drive account</d>
+			<p>false</p>
+			<t></t>
+		</Share>
+	</Project>
+	<Task sr="task537">
+		<cdate>1590253256474</cdate>
+		<edate>1590255696527</edate>
+		<id>537</id>
+		<nme>Repository Phone Call2</nme>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%RepoFileCall</Str>
+			<Str sr="arg1" ve="3">%evtprm2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+		</Action>
+	</Task>
+	<Task sr="task538">
+		<cdate>1590179368963</cdate>
+		<edate>1590256633217</edate>
+		<id>538</id>
+		<nme>Management Phone Call 2</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%evtprm()</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>377</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Bouton
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">What do you want to do ?</Str>
+			<Str sr="arg2" ve="3">File name :
+%evtprm1</Str>
+			<Str sr="arg3" ve="3">Save</Str>
+			<Str sr="arg4" ve="3">Delete</Str>
+			<Str sr="arg5" ve="3">Drive</Str>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>327</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gd_account
+Compte
+Compte qui a été connecté à Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>360</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Entrée
+Le texte qui a été inséré dans la boîte de dialogue&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Commentaires</Str>
+			<Str sr="arg2" ve="3">Write a com</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="120"/>
+			<Str sr="arg5" ve="3">98385</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>321</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gd_id()
+Identification du fichier
+Identifiant Unique du fichier sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%gd_md5()
+MD5
+MD5 checksum du fichier sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%gd_mimetype()
+Type Mime
+Type de fichier sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%gd_time()
+Heure du Fichier
+La dernière fois que le fichier a été modifié par quelqu'un. Exprimé en secondes depuis le Début (similaire à %TIMES)&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%gd_name()
+Nom du fichier
+Nom du fichier sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%gd_size()
+Taille du fichier
+Taille du fichier (en octets) sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%gd_uploaded()
+Téléchargé
+vrai si le fichier a été téléchargé, sinon faux&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;%gd_weburl()
+URL Web
+URL qui peut être utilisée pour afficher le fichier sur Google Drive&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%gd_account</Str>
+			<Str sr="arg2" ve="3">%evtprm1</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">Phone/Calls</Str>
+			<Str sr="arg5" ve="3">%input</Str>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>523</code>
+			<Str sr="arg0" ve="3">%evtprm1</Str>
+			<Str sr="arg1" ve="3">%gd_uploaded()</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3">Application</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_google_drive</nme>
+				<tint>-1</tint>
+			</Img>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%RepoFileCall</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>Save</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">File save :
+%evtprm1</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%RepoFileCall</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>Delete</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>406</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%evtprm1</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">File delete :
+%evtprm1</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%RepoFileCall</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>Drive</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+	</Task>
+	<Task sr="task539">
+		<cdate>1538986612760</cdate>
+		<edate>1590255692667</edate>
+		<id>539</id>
+		<nme>Record Phone Call 2</nme>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>235</code>
+			<se>false</se>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">op_voice_recording_supported_by_mcc</Str>
+			<Str sr="arg2" ve="3">1</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">%res</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Début enregistrement appel</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%res</lhs>
+					<op>1</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings_phone</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+</TaskerData>
